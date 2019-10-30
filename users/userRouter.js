@@ -42,7 +42,7 @@ router.post('/:id/posts', validateUserId, validatePost, (req, res) => {
       .catch(() => res.status(500).json({ error: "There was an error adding the post."}))
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', validateUserId, (req, res) => {
     usersdb.remove(req.params.id)
     .then(user => {
         if (user) {
