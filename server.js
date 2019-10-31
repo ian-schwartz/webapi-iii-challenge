@@ -20,7 +20,7 @@ server.use('/api/user', userRouter);
 server.use('/api/post', postRouter);
 
 server.get('/', (req, res) => {
-  res.status(200).json({ message: process.env.MSG });
+  res.status(200).json('Hello 🙂');
 });
 
 module.exports = server;
